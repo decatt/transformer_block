@@ -66,6 +66,8 @@ class MixtureOfExperts(nn.Module):
         self.d_model = d_model
         self.num_experts = num_experts
         self.top_k = top_k
+        # Note: expert_capacity_factor is reserved for future capacity-based load balancing
+        # Currently using variance-based load balancing in aux_loss
         self.expert_capacity_factor = expert_capacity_factor
         
         # Gating network
